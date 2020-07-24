@@ -4,21 +4,31 @@ h1 { text-align: center }
     width: 500px;
     height: 500px;
     margin: 0 auto;
-    background-color: #34495e;
+    background-color: #fa5fc6;
     color: #fff;
-    border: 6px solid #2c3e50;
+    border: 6px solid #eb029d;
     border-radius: 10px;
     display: grid;
     grid-template: repeat(3, 1fr)/ repeat(3, 1fr);
 }
 
 .game > div {
-    border: 6px solid #2c3e50;
+    border: 6px solid #eb029d;
     border-radius: 2px;
     font-family: Helvetica;
     font-weight: bold;
     font-size: 4em;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.botaoStart{
+    background-color: #eb029d;
+    color: #fff;
+    border-radius: 5px;
+    /* position:absolute; */
+    /* top: 500px;
+    left: 500px; */
     align-items: center;
 }

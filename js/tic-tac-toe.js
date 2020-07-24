@@ -1,6 +1,7 @@
 const tic_tac_toe = {
+
     board: ['', '', '', '', '', '', '', '', ''],
-    simbols: {
+    symbols: {
         options: ['X', 'O'],
         turn_index: 0,
         change: function () {
@@ -28,13 +29,13 @@ const tic_tac_toe = {
     make_play: function(position) {
         if (this.gameover) return false; // se o jogo terminou retorna falso
         if (this.board[position] === ''){
-            this.board[position] = this.simbols.options[this.simbols.turn_index];
+            this.board[position] = this.symbols.options[this.symbols.turn_index];
             this.draw();
-            let winning_sequences_index = this.check_winning_sequences( this.simbols.options[this.simbols.turn_index] );
+            let winning_sequences_index = this.check_winning_sequences( this.symbols.options[this.symbols.turn_index] );
             if (winning_sequences_index >= 0){
                 this.game_is_over();
             } else{
-                this.simbols.change();
+                this.symbols.change();
             }
             return true;
         }
@@ -43,12 +44,12 @@ const tic_tac_toe = {
         }
     },
 
-    check_winning_sequences: function(simbol) {
+    check_winning_sequences: function(symbols) {
 
         for ( i in this.winning_sequences ) {
-            if (this.board[ this.winning_sequences[i][0] ] == simbol  &&
-                this.board[ this.winning_sequences[i][1] ] == simbol &&
-                this.board[ this.winning_sequences[i][2] ] == simbol) {
+            if (this.board[ this.winning_sequences[i][0] ] == symbols  &&
+                this.board[ this.winning_sequences[i][1] ] == symbols &&
+                this.board[ this.winning_sequences[i][2] ] == symbols) {
                 console.log('winning sequences INDEX:' + i);
                 return i;
             }
@@ -62,6 +63,7 @@ const tic_tac_toe = {
     },
 
     start: function(){
+        console.log("start");
         this.board.fill('');
         this.draw();
         this.gameover = false;
@@ -75,5 +77,9 @@ const tic_tac_toe = {
         }
 
         this.conteiner_element.innerHTML = content;
+    },
+
+    restart(){
+        alert("start");
     }
 };
