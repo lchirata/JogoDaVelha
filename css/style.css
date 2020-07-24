@@ -22,13 +22,38 @@ h1 { text-align: center }
     justify-content: center;
     align-items: center;
 }
-
-.botaoStart{
-    background-color: #eb029d;
-    color: #fff;
-    border-radius: 5px;
-    /* position:absolute; */
-    /* top: 500px;
-    left: 500px; */
-    align-items: center;
-}
+.btn {
+    border: 5px solid #eb029d;
+    background-color: #fa5fc6;
+    color: white;
+    margin-top: 30px;
+    margin-left: 830px;
+    padding: 10px 20px
+  }
+  
+  .game > div.winner {
+    background: yellow;
+  }
+  
+  .game > div.winner > span {
+    color: blue;
+  }
+  
+  @media (min-width: 600px) {
+    .game {
+      width: 600px;
+      height: 600px;
+      border-radius: 10px;
+      border: 6px solid #fa5fc6;
+    }
+  
+    .game>div {
+      border-radius: 2px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .btn {
+      cursor: pointer
+    }
+  } 

@@ -62,11 +62,31 @@ const tic_tac_toe = {
         console.log("GAME OVER");
     },
 
+    is_game_over: function() {
+        for (let i of this.board){
+            if (i===''){
+                return false;
+            }
+        }
+
+        return true;
+    },
+
     start: function(){
         console.log("start");
         this.board.fill('');
         this.draw();
         this.gameover = false;
+    },
+
+    restart: function (){
+        if(this.is_game_over() || this.gameover) {
+            this.start();
+            console.log('this game has been restarted!')
+        }else if(confirm('Are you want to restart this game?')){
+            this.start();
+            console.log('this game has been restarted!')
+        }
     },
 
     draw: function () {
@@ -79,7 +99,4 @@ const tic_tac_toe = {
         this.conteiner_element.innerHTML = content;
     },
 
-    restart(){
-        alert("start");
-    }
 };
